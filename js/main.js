@@ -124,16 +124,41 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // ---- 产品筛选 ----
-  var filterTabs = document.querySelectorAll(".filter-tab");
-  var productCards = document.querySelectorAll(".product-detail-card");
-  if (filterTabs.length > 0) {
-    filterTabs.forEach(function (tab) {
+  // ---- 产品主分类切换（粉末涂料 / 涂装设备）----
+  var mainCatTabs = document.querySelectorAll(".main-cat-tab");
+  if (mainCatTabs.length > 0) {
+    mainCatTabs.forEach(function (tab) {
       tab.addEventListener("click", function () {
-        filterTabs.forEach(function (t) { t.classList.remove("active"); });
+        mainCatTabs.forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        var main = tab.getAttribute("data-main");
+        document.querySelectorAll(".product-section").forEach(function (sec) {
+          sec.classList.toggle("active", sec.id === "section-" + main);
+        });
+        // 重置该分区内的子筛选为"全部"
+        var activeSection = document.getElementById("section-" + main);
+        if (activeSection) {
+          activeSection.querySelectorAll(".filter-tab").forEach(function (t) {
+            t.classList.toggle("active", t.getAttribute("data-filter") === "all");
+          });
+          activeSection.querySelectorAll(".product-detail-card").forEach(function (c) {
+            c.classList.remove("hidden");
+          });
+        }
+      });
+    });
+  }
+
+  // ---- 产品子筛选 ----
+  document.querySelectorAll(".product-section").forEach(function (section) {
+    var tabs = section.querySelectorAll(".filter-tab");
+    var cards = section.querySelectorAll(".product-detail-card");
+    tabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        tabs.forEach(function (t) { t.classList.remove("active"); });
         tab.classList.add("active");
         var filter = tab.getAttribute("data-filter");
-        productCards.forEach(function (card) {
+        cards.forEach(function (card) {
           if (filter === "all" || card.getAttribute("data-category") === filter) {
             card.classList.remove("hidden");
           } else {
@@ -142,7 +167,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       });
     });
-  }
+  });
 
   // ---- 滚动入场动画 ----
   var revealEls = document.querySelectorAll(".reveal");
