@@ -75,6 +75,30 @@
       display: inline-block; padding: 9px 24px; font-size: 13px;
     }
 
+    /* 涂膜性能表格 */
+    .perf-table-wrap { margin: 14px 0 16px; }
+    .perf-table-title {
+      font-size: 13px; font-weight: 600; color: var(--primary);
+      margin-bottom: 6px; display: flex; align-items: center; gap: 6px;
+    }
+    .perf-table-title::before {
+      content: ""; display: inline-block;
+      width: 3px; height: 13px; background: var(--accent); border-radius: 2px;
+    }
+    .perf-table {
+      width: 100%; border-collapse: collapse; font-size: 12px;
+    }
+    .perf-table th {
+      background: var(--primary); color: #fff;
+      padding: 6px 8px; text-align: left; font-weight: 500;
+    }
+    .perf-table td {
+      padding: 5px 8px; border-bottom: 1px solid #eee; color: var(--text);
+      vertical-align: top;
+    }
+    .perf-table tr:last-child td { border-bottom: none; }
+    .perf-table tr:nth-child(even) td { background: #f9f9f9; }
+
     @media(max-width:768px) {
       .product-detail-grid { grid-template-columns: 1fr 1fr; }
     }
@@ -145,6 +169,21 @@
             <span class="spec-tag">低温固化型可选</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：门窗铝挤出型材、道路标志桩、汽车工业、交通器材、空调外壳、煤气炉板、庭园用具、扶手和栅栏、农业器械和电线杆等</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>高光: 50kg/cm; 半/平光: 40kg/cm; 无光: 40kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>高光: 8mm; 半/平光: 7mm; 无光: 7mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>高光: 2mm; 半/平光: 3mm; 无光: 3mm</td></tr>
+              <tr><td>铅笔硬度</td><td>1H–2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+              <tr><td>湿热试验</td><td>&gt;1000小时</td></tr>
+              <tr><td>耐候性（弗罗里达暴晒）</td><td>保光性 ≥50%（12个月）</td></tr>
+              <tr><td>人工加速老化（500小时）</td><td>保光性 ≥50%; 颜色稳定性 ΔE≤0.35</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -160,6 +199,17 @@
             <span class="spec-tag">盐雾>500小时</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：医院手术室、计算机房、精密仪器室、电子元器件生产车间、易燃易爆品储存库等对静电控制要求严格的场所</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>6mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>铅笔硬度</td><td>2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -175,6 +225,19 @@
             <span class="spec-tag">金属外观</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：高档金属制品涂装，铝型材、金属家具等</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>30–50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>6mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>3mm</td></tr>
+              <tr><td>铅笔硬度</td><td>1H–2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+              <tr><td>湿热试验</td><td>&gt;1000小时</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -190,6 +253,17 @@
             <span class="spec-tag">颜色稳定</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：排烟管道、烧烤架、热交换器等工件涂装</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>6mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>铅笔硬度</td><td>2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -205,6 +279,19 @@
             <span class="spec-tag">多种光泽</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：铝型材、金属家具和礼品等物品涂装</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>6mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>2mm</td></tr>
+              <tr><td>铅笔硬度</td><td>HB–F</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+              <tr><td>湿热试验</td><td>&gt;1000小时</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -220,6 +307,18 @@
             <span class="spec-tag">室内外适用</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：家具、桥梁等室内外各类需要阻燃防护的场合</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>5mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>2mm</td></tr>
+              <tr><td>铅笔硬度</td><td>2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -235,6 +334,20 @@
             <span class="spec-tag">低温固化型</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：防腐管道、石油输送管、污水管、船舶用水管、煤气管和阀门、钢家具、液化气钢瓶、建筑用钢筋和钢模板、电子元器件绝缘包装</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>A型: 40kg/cm；B、C型: 50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>A型: 5mm；B、C型: 8mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>A型: 3mm；B、C型: 2mm</td></tr>
+              <tr><td>铅笔硬度</td><td>1H–2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+              <tr><td>湿热试验</td><td>&gt;1000小时</td></tr>
+              <tr><td>耐热性（110℃/24h）</td><td>保光性优异，ΔE≤0.3–0.4</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
@@ -252,6 +365,20 @@
             <span class="spec-tag">耐腐蚀</span>
           </div>
           <p style="font-size:12px;color:#888;margin-bottom:12px">适用：家电行业、仪器仪表行业、照明灯具、钢制家具、日用铝制品、图书设备、商业机械和针织机械</p>
+          <div class="perf-table-wrap">
+            <div class="perf-table-title">涂膜性能</div>
+            <table class="perf-table">
+              <tr><th>检测项目</th><th>检验指标</th></tr>
+              <tr><td>抗冲击性</td><td>50kg/cm</td></tr>
+              <tr><td>杯突试验</td><td>8mm</td></tr>
+              <tr><td>附着力（划格法）</td><td>0级</td></tr>
+              <tr><td>弯曲</td><td>2mm</td></tr>
+              <tr><td>铅笔硬度</td><td>1H–2H</td></tr>
+              <tr><td>盐雾试验</td><td>&gt;500小时</td></tr>
+              <tr><td>湿热试验</td><td>&gt;1000小时</td></tr>
+              <tr><td>耐热性（110℃/24h）</td><td>保光性优异，ΔE≤0.3–0.4</td></tr>
+            </table>
+          </div>
           <a href="contact.html" class="btn-primary">获取报价 / 索取样品</a>
         </div>
       </div>
