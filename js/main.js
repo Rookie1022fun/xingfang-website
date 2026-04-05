@@ -116,4 +116,18 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // ---- 滚动入场动画 ----
+  var revealEls = document.querySelectorAll(".reveal");
+  if (revealEls.length > 0) {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach(function (el) { revealObserver.observe(el); });
+  }
+
 });
