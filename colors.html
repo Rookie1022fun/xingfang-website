@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAL色卡 - 扬州市星方化工设备厂 & 宝乐涂装设备有限公司</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #0d2a52, #1a3a6e);
+      color: #fff; text-align: center; padding: 60px 20px;
+    }
+    .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+    .page-banner p { color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 8px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); }
+
+    .colors-page { padding: 50px 0 80px; }
+
+    /* 搜索栏 */
+    .color-search-bar {
+      display: flex; gap: 12px; align-items: center;
+      margin-bottom: 28px; flex-wrap: wrap;
+    }
+    .color-search-bar input {
+      flex: 1; min-width: 220px; padding: 10px 16px;
+      border: 1px solid var(--border); border-radius: 6px;
+      font-size: 14px; outline: none; font-family: inherit;
+    }
+    .color-search-bar input:focus { border-color: var(--primary); }
+    .color-count { font-size: 13px; color: var(--text-light); white-space: nowrap; }
+
+    /* 分组标签 */
+    .color-group-tabs {
+      display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px;
+    }
+    .cg-tab {
+      display: flex; align-items: center; gap: 7px;
+      padding: 7px 16px; border-radius: 20px;
+      border: 1px solid var(--border); background: #fff;
+      font-size: 13px; cursor: pointer; transition: all 0.2s;
+      color: var(--text-light);
+    }
+    .cg-tab:hover { border-color: var(--primary); color: var(--primary); }
+    .cg-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .cg-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
+
+    /* 分组标题 */
+    .color-group-title {
+      font-size: 16px; font-weight: 700; color: var(--primary);
+      margin: 36px 0 16px; padding-bottom: 8px;
+      border-bottom: 2px solid var(--border);
+      display: flex; align-items: center; gap: 10px;
+    }
+    .color-group-title .cg-badge {
+      font-size: 12px; font-weight: 500; color: #fff;
+      background: var(--primary); padding: 2px 10px; border-radius: 10px;
+    }
+
+    /* 色卡网格 */
+    .color-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 12px;
+    }
+    .color-swatch {
+      border-radius: 8px; overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      cursor: pointer; transition: all 0.22s;
+      background: #fff;
+    }
+    .color-swatch:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+    }
+    .swatch-block {
+      height: 80px; width: 100%;
+    }
+    .swatch-info {
+      padding: 7px 8px 8px;
+    }
+    .swatch-code {
+      font-size: 12px; font-weight: 700; color: var(--primary);
+      letter-spacing: 0.3px; line-height: 1.2;
+    }
+    .swatch-name {
+      font-size: 11px; color: var(--text-light);
+      margin-top: 2px; line-height: 1.3;
+      white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    }
+
+    /* 隐藏 */
+    .color-swatch.hidden { display: none; }
+    .color-group-section.hidden { display: none; }
+
+    /* 底部 CTA */
+    .color-cta {
+      background: var(--primary); padding: 60px 24px; text-align: center; color: #fff;
+      margin-top: 60px;
+    }
+    .color-cta h3 { font-size: 22px; margin-bottom: 10px; }
+    .color-cta p { color: rgba(255,255,255,0.75); margin-bottom: 24px; }
+
+    .no-result {
+      text-align: center; padding: 60px 0;
+      color: var(--text-light); font-size: 14px; display: none;
+    }
+
+    @media(max-width:600px) {
+      .color-grid { grid-template-columns: repeat(auto-fill, minmax(85px, 1fr)); gap: 8px; }
+      .swatch-block { height: 65px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span>📍 扬州市江都区小纪镇华阳工业园华阳街路42号 225200</span>
+    </div>
+    <div class="top-bar-right">
+      <span>📞 18019744588</span>
+      <a href="mailto:trcshen@163.com">✉ trcshen@163.com</a>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon" style="font-size:13px;letter-spacing:0;line-height:1.2;text-align:center">星方<br>·宝乐</div>
+      <div class="logo-text">
+        <h1 style="line-height:1.3">扬州市星方化工设备厂<br><span style="font-size:12px;font-weight:500;color:var(--primary-mid)">扬州市宝乐涂装设备有限公司</span></h1>
+        <span>XINGFANG CHEMICAL EQUIPMENT · BAOLE COATING CO., LTD.</span>
+      </div>
+    </div>
+    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="products.html">产品中心</a></li>
+      <li><a href="colors.html" class="active">RAL色卡</a></li>
+      <li><a href="news.html">新闻动态</a></li>
+      <li><a href="contact.html">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <h2>RAL K7 标准色卡</h2>
+  <p>RAL CLASSIC · 213色全系列 · 国际标准色号现货供应</p>
+  <div class="breadcrumb"><a href="index.html">首页</a> / <a href="products.html">产品中心</a> / RAL色卡</div>
+</div>
+
+<section class="colors-page">
+  <div class="container">
+
+    <!-- 搜索 -->
+    <div class="color-search-bar">
+      <input type="text" id="colorSearch" placeholder="搜索色号或颜色名称，如：RAL 9010 或 纯白">
+      <span class="color-count" id="colorCount">共 213 色</span>
+    </div>
+
+    <!-- 分组标签 -->
+    <div class="color-group-tabs">
+      <div class="cg-tab active" data-group="all">全部</div>
+      <div class="cg-tab" data-group="1000"><span class="cg-dot" style="background:#C9A84C"></span>黄色系</div>
+      <div class="cg-tab" data-group="2000"><span class="cg-dot" style="background:#DC7800"></span>橙色系</div>
+      <div class="cg-tab" data-group="3000"><span class="cg-dot" style="background:#A82020"></span>红色系</div>
+      <div class="cg-tab" data-group="4000"><span class="cg-dot" style="background:#885090"></span>紫色系</div>
+      <div class="cg-tab" data-group="5000"><span class="cg-dot" style="background:#005090"></span>蓝色系</div>
+      <div class="cg-tab" data-group="6000"><span class="cg-dot" style="background:#307060"></span>绿色系</div>
+      <div class="cg-tab" data-group="7000"><span class="cg-dot" style="background:#787878"></span>灰色系</div>
+      <div class="cg-tab" data-group="8000"><span class="cg-dot" style="background:#804020"></span>棕色系</div>
+      <div class="cg-tab" data-group="9000"><span class="cg-dot" style="background:#D0D0D0;border:1px solid #ccc"></span>白/黑系</div>
+    </div>
+
+    <div id="noResult" class="no-result">未找到匹配的颜色，请尝试其他关键词</div>
+    <div id="colorContainer"></div>
+
+  </div>
+</section>
+
+<div class="color-cta">
+  <div class="container">
+    <h3>需要色板样品或定制色号？</h3>
+    <p>100% 覆盖 RAL K7 全系列 · 潘通色号同样支持 · 专业打样团队极速交付</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-block">立即联系获取样品</a>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">星方·宝乐 一体化涂装品牌</div>
+          <p>扬州市星方化工设备厂（2007）× 扬州市宝乐涂装设备有限公司（2016），提供粉末涂料与涂装设备全产业链服务。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="colors.html">RAL色卡</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>粉末涂料系列</h4>
+          <ul>
+            <li><a href="products.html">聚酯系列</a></li>
+            <li><a href="products.html">环氧系列</a></li>
+            <li><a href="products.html">功能性系列</a></li>
+            <li><a href="products.html">特种系列</a></li>
+            <li><a href="colors.html">RAL色卡查询</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <ul class="footer-contact">
+            <li><span>📍</span><span>扬州市江都区小纪镇华阳工业园华阳街路42号</span></li>
+            <li><span>📞</span><span>沈经理：18019744588</span></li>
+            <li><span>✉</span><span>trcshen@163.com</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 扬州市星方化工设备厂 &amp; 扬州市宝乐涂装设备有限公司 版权所有 | <a href="#">苏ICP备XXXXXXXX号</a></div>
+  </div>
+</footer>
+
+<button class="back-top" title="回到顶部">▲</button>
+<script src="js/main.js"></script>
+<script>
+// ============================================================
+//  RAL K7 全部 213 色数据
+// ============================================================
+const RAL_COLORS = [
+  // ── 黄色系 RAL 1xxx ──
+  {code:"RAL 1000",hex:"#CCC58F",name:"绿米色",group:"1000"},
+  {code:"RAL 1001",hex:"#C7AE73",name:"米色",group:"1000"},
+  {code:"RAL 1002",hex:"#C9A84C",name:"沙黄色",group:"1000"},
+  {code:"RAL 1003",hex:"#E6A817",name:"信号黄",group:"1000"},
+  {code:"RAL 1004",hex:"#D49B00",name:"金黄色",group:"1000"},
+  {code:"RAL 1005",hex:"#C08F00",name:"蜜黄色",group:"1000"},
+  {code:"RAL 1006",hex:"#D29000",name:"玉米黄",group:"1000"},
+  {code:"RAL 1007",hex:"#DFA000",name:"水仙黄",group:"1000"},
+  {code:"RAL 1011",hex:"#9F7A00",name:"棕米色",group:"1000"},
+  {code:"RAL 1012",hex:"#D0AC00",name:"柠檬黄",group:"1000"},
+  {code:"RAL 1013",hex:"#E6DCBE",name:"珍珠白",group:"1000"},
+  {code:"RAL 1014",hex:"#DDD09A",name:"象牙色",group:"1000"},
+  {code:"RAL 1015",hex:"#EDE1BC",name:"浅象牙色",group:"1000"},
+  {code:"RAL 1016",hex:"#E8D44D",name:"硫黄色",group:"1000"},
+  {code:"RAL 1017",hex:"#F5A800",name:"藏红花黄",group:"1000"},
+  {code:"RAL 1018",hex:"#F3D217",name:"锌黄色",group:"1000"},
+  {code:"RAL 1019",hex:"#988A74",name:"灰米色",group:"1000"},
+  {code:"RAL 1020",hex:"#8C8C00",name:"橄榄黄",group:"1000"},
+  {code:"RAL 1021",hex:"#F0BD00",name:"油菜黄",group:"1000"},
+  {code:"RAL 1023",hex:"#F5A300",name:"交通黄",group:"1000"},
+  {code:"RAL 1024",hex:"#BA8A00",name:"赭黄色",group:"1000"},
+  {code:"RAL 1026",hex:"#FFFF10",name:"荧光黄",group:"1000"},
+  {code:"RAL 1027",hex:"#A87C00",name:"咖喱色",group:"1000"},
+  {code:"RAL 1028",hex:"#FF8E00",name:"甜瓜黄",group:"1000"},
+  {code:"RAL 1032",hex:"#D4AA00",name:"金雀花黄",group:"1000"},
+  {code:"RAL 1033",hex:"#F09000",name:"大丽花黄",group:"1000"},
+  {code:"RAL 1034",hex:"#E8A050",name:"淡黄色",group:"1000"},
+  {code:"RAL 1035",hex:"#A08040",name:"珍珠米色",group:"1000"},
+  {code:"RAL 1036",hex:"#9A7040",name:"珍珠金",group:"1000"},
+  {code:"RAL 1037",hex:"#F09000",name:"太阳黄",group:"1000"},
+  // ── 橙色系 RAL 2xxx ──
+  {code:"RAL 2000",hex:"#DC7800",name:"黄橙色",group:"2000"},
+  {code:"RAL 2001",hex:"#BE4E20",name:"红橙色",group:"2000"},
+  {code:"RAL 2002",hex:"#C03820",name:"朱红色",group:"2000"},
+  {code:"RAL 2003",hex:"#F07030",name:"淡橙色",group:"2000"},
+  {code:"RAL 2004",hex:"#E05010",name:"纯橙色",group:"2000"},
+  {code:"RAL 2005",hex:"#FF5000",name:"荧光橙",group:"2000"},
+  {code:"RAL 2007",hex:"#FFB000",name:"荧光亮橙",group:"2000"},
+  {code:"RAL 2008",hex:"#E86830",name:"亮红橙",group:"2000"},
+  {code:"RAL 2009",hex:"#E05000",name:"交通橙",group:"2000"},
+  {code:"RAL 2010",hex:"#C07040",name:"信号橙",group:"2000"},
+  {code:"RAL 2011",hex:"#E88000",name:"深橙色",group:"2000"},
+  {code:"RAL 2012",hex:"#D86840",name:"鲑鱼橙",group:"2000"},
+  {code:"RAL 2013",hex:"#904040",name:"珍珠橙",group:"2000"},
+  // ── 红色系 RAL 3xxx ──
+  {code:"RAL 3000",hex:"#A82020",name:"火焰红",group:"3000"},
+  {code:"RAL 3001",hex:"#A02020",name:"信号红",group:"3000"},
+  {code:"RAL 3002",hex:"#A02828",name:"胭脂红",group:"3000"},
+  {code:"RAL 3003",hex:"#882020",name:"红宝石红",group:"3000"},
+  {code:"RAL 3004",hex:"#702020",name:"紫红色",group:"3000"},
+  {code:"RAL 3005",hex:"#501818",name:"葡萄酒红",group:"3000"},
+  {code:"RAL 3007",hex:"#381818",name:"黑红色",group:"3000"},
+  {code:"RAL 3009",hex:"#702828",name:"氧化红",group:"3000"},
+  {code:"RAL 3011",hex:"#802020",name:"棕红色",group:"3000"},
+  {code:"RAL 3012",hex:"#D09080",name:"米玫瑰色",group:"3000"},
+  {code:"RAL 3013",hex:"#982020",name:"番茄红",group:"3000"},
+  {code:"RAL 3014",hex:"#C87878",name:"古粉红",group:"3000"},
+  {code:"RAL 3015",hex:"#D8A0A0",name:"浅粉红",group:"3000"},
+  {code:"RAL 3016",hex:"#B03020",name:"珊瑚红",group:"3000"},
+  {code:"RAL 3017",hex:"#C05060",name:"玫瑰色",group:"3000"},
+  {code:"RAL 3018",hex:"#C03040",name:"草莓红",group:"3000"},
+  {code:"RAL 3020",hex:"#C02020",name:"交通红",group:"3000"},
+  {code:"RAL 3022",hex:"#D07860",name:"鲑鱼粉红",group:"3000"},
+  {code:"RAL 3024",hex:"#F00000",name:"荧光红",group:"3000"},
+  {code:"RAL 3026",hex:"#F02020",name:"荧光亮红",group:"3000"},
+  {code:"RAL 3027",hex:"#A81840",name:"树莓红",group:"3000"},
+  {code:"RAL 3028",hex:"#CC2000",name:"纯红色",group:"3000"},
+  {code:"RAL 3031",hex:"#A03030",name:"东方红",group:"3000"},
+  {code:"RAL 3032",hex:"#701820",name:"珍珠宝石红",group:"3000"},
+  {code:"RAL 3033",hex:"#A84030",name:"珍珠粉红",group:"3000"},
+  // ── 紫色系 RAL 4xxx ──
+  {code:"RAL 4001",hex:"#885090",name:"丁香紫",group:"4000"},
+  {code:"RAL 4002",hex:"#903050",name:"红紫色",group:"4000"},
+  {code:"RAL 4003",hex:"#D06080",name:"石南紫",group:"4000"},
+  {code:"RAL 4004",hex:"#600050",name:"波尔多紫",group:"4000"},
+  {code:"RAL 4005",hex:"#6870A0",name:"蓝丁香",group:"4000"},
+  {code:"RAL 4006",hex:"#A01870",name:"交通紫",group:"4000"},
+  {code:"RAL 4007",hex:"#4A2050",name:"紫红色",group:"4000"},
+  {code:"RAL 4008",hex:"#904080",name:"信号紫",group:"4000"},
+  {code:"RAL 4009",hex:"#A08090",name:"淡紫色",group:"4000"},
+  {code:"RAL 4010",hex:"#C03070",name:"电信紫",group:"4000"},
+  {code:"RAL 4011",hex:"#7070A0",name:"珍珠紫",group:"4000"},
+  {code:"RAL 4012",hex:"#708090",name:"珍珠黑莓",group:"4000"},
+  // ── 蓝色系 RAL 5xxx ──
+  {code:"RAL 5000",hex:"#3A5080",name:"紫蓝色",group:"5000"},
+  {code:"RAL 5001",hex:"#1E5060",name:"绿蓝色",group:"5000"},
+  {code:"RAL 5002",hex:"#002080",name:"超深蓝",group:"5000"},
+  {code:"RAL 5003",hex:"#1E3060",name:"蓝宝石蓝",group:"5000"},
+  {code:"RAL 5004",hex:"#101820",name:"黑蓝色",group:"5000"},
+  {code:"RAL 5005",hex:"#005090",name:"信号蓝",group:"5000"},
+  {code:"RAL 5007",hex:"#4070A0",name:"亮蓝色",group:"5000"},
+  {code:"RAL 5008",hex:"#284060",name:"灰蓝色",group:"5000"},
+  {code:"RAL 5009",hex:"#2E5878",name:"天蓝色",group:"5000"},
+  {code:"RAL 5010",hex:"#005080",name:"龙胆蓝",group:"5000"},
+  {code:"RAL 5011",hex:"#102040",name:"钢蓝色",group:"5000"},
+  {code:"RAL 5012",hex:"#4890C8",name:"浅蓝色",group:"5000"},
+  {code:"RAL 5013",hex:"#1A2A58",name:"钴蓝色",group:"5000"},
+  {code:"RAL 5014",hex:"#6080A0",name:"鸽蓝色",group:"5000"},
+  {code:"RAL 5015",hex:"#2080C0",name:"天空蓝",group:"5000"},
+  {code:"RAL 5017",hex:"#006090",name:"交通蓝",group:"5000"},
+  {code:"RAL 5018",hex:"#208080",name:"青绿蓝",group:"5000"},
+  {code:"RAL 5019",hex:"#105878",name:"毛细管蓝",group:"5000"},
+  {code:"RAL 5020",hex:"#103040",name:"海洋蓝",group:"5000"},
+  {code:"RAL 5021",hex:"#108080",name:"水蓝色",group:"5000"},
+  {code:"RAL 5022",hex:"#202858",name:"夜蓝色",group:"5000"},
+  {code:"RAL 5023",hex:"#406088",name:"远景蓝",group:"5000"},
+  {code:"RAL 5024",hex:"#6090B0",name:"淡蓝色",group:"5000"},
+  {code:"RAL 5025",hex:"#608090",name:"珍珠龙胆蓝",group:"5000"},
+  {code:"RAL 5026",hex:"#103050",name:"珍珠夜蓝",group:"5000"},
+  // ── 绿色系 RAL 6xxx ──
+  {code:"RAL 6000",hex:"#307860",name:"铜绿色",group:"6000"},
+  {code:"RAL 6001",hex:"#306020",name:"翡翠绿",group:"6000"},
+  {code:"RAL 6002",hex:"#285020",name:"叶绿色",group:"6000"},
+  {code:"RAL 6003",hex:"#484830",name:"橄榄绿",group:"6000"},
+  {code:"RAL 6004",hex:"#184838",name:"蓝绿色",group:"6000"},
+  {code:"RAL 6005",hex:"#183028",name:"苔藓绿",group:"6000"},
+  {code:"RAL 6006",hex:"#303820",name:"灰橄榄色",group:"6000"},
+  {code:"RAL 6007",hex:"#283020",name:"瓶绿色",group:"6000"},
+  {code:"RAL 6008",hex:"#282820",name:"棕绿色",group:"6000"},
+  {code:"RAL 6009",hex:"#203020",name:"冷杉绿",group:"6000"},
+  {code:"RAL 6010",hex:"#387028",name:"草绿色",group:"6000"},
+  {code:"RAL 6011",hex:"#587848",name:"淡橄榄绿",group:"6000"},
+  {code:"RAL 6012",hex:"#304838",name:"黑绿色",group:"6000"},
+  {code:"RAL 6013",hex:"#787858",name:"苇绿色",group:"6000"},
+  {code:"RAL 6014",hex:"#484830",name:"黄橄榄色",group:"6000"},
+  {code:"RAL 6015",hex:"#383828",name:"黑橄榄色",group:"6000"},
+  {code:"RAL 6016",hex:"#188040",name:"青绿色",group:"6000"},
+  {code:"RAL 6017",hex:"#407030",name:"五月绿",group:"6000"},
+  {code:"RAL 6018",hex:"#509040",name:"黄绿色",group:"6000"},
+  {code:"RAL 6019",hex:"#C8D8B0",name:"白绿色",group:"6000"},
+  {code:"RAL 6020",hex:"#303020",name:"铬绿色",group:"6000"},
+  {code:"RAL 6021",hex:"#889870",name:"淡绿色",group:"6000"},
+  {code:"RAL 6022",hex:"#382820",name:"棕橄榄绿",group:"6000"},
+  {code:"RAL 6024",hex:"#307040",name:"交通绿",group:"6000"},
+  {code:"RAL 6025",hex:"#487838",name:"蕨绿色",group:"6000"},
+  {code:"RAL 6026",hex:"#105830",name:"蛋白石绿",group:"6000"},
+  {code:"RAL 6027",hex:"#70C8A0",name:"浅绿色",group:"6000"},
+  {code:"RAL 6028",hex:"#286038",name:"松绿色",group:"6000"},
+  {code:"RAL 6029",hex:"#106830",name:"薄荷绿",group:"6000"},
+  {code:"RAL 6032",hex:"#289050",name:"信号绿",group:"6000"},
+  {code:"RAL 6033",hex:"#488880",name:"薄荷青绿",group:"6000"},
+  {code:"RAL 6034",hex:"#90C8B8",name:"淡青绿",group:"6000"},
+  {code:"RAL 6035",hex:"#285028",name:"珍珠绿",group:"6000"},
+  {code:"RAL 6036",hex:"#186048",name:"珍珠蛋白石绿",group:"6000"},
+  {code:"RAL 6037",hex:"#009050",name:"纯绿色",group:"6000"},
+  {code:"RAL 6038",hex:"#00B830",name:"荧光绿",group:"6000"},
+  // ── 灰色系 RAL 7xxx ──
+  {code:"RAL 7000",hex:"#788090",name:"松鼠灰",group:"7000"},
+  {code:"RAL 7001",hex:"#8898A8",name:"银灰色",group:"7000"},
+  {code:"RAL 7002",hex:"#787060",name:"橄榄灰",group:"7000"},
+  {code:"RAL 7003",hex:"#787060",name:"苔藓灰",group:"7000"},
+  {code:"RAL 7004",hex:"#989898",name:"信号灰",group:"7000"},
+  {code:"RAL 7005",hex:"#686860",name:"鼠灰色",group:"7000"},
+  {code:"RAL 7006",hex:"#706860",name:"米灰色",group:"7000"},
+  {code:"RAL 7008",hex:"#787040",name:"卡其灰",group:"7000"},
+  {code:"RAL 7009",hex:"#585848",name:"绿灰色",group:"7000"},
+  {code:"RAL 7010",hex:"#585850",name:"帐篷灰",group:"7000"},
+  {code:"RAL 7011",hex:"#505860",name:"铁灰色",group:"7000"},
+  {code:"RAL 7012",hex:"#586068",name:"玄武岩灰",group:"7000"},
+  {code:"RAL 7013",hex:"#585048",name:"棕灰色",group:"7000"},
+  {code:"RAL 7015",hex:"#485060",name:"板岩灰",group:"7000"},
+  {code:"RAL 7016",hex:"#383E48",name:"蒽灰色",group:"7000"},
+  {code:"RAL 7021",hex:"#303038",name:"黑灰色",group:"7000"},
+  {code:"RAL 7022",hex:"#484840",name:"暗灰色",group:"7000"},
+  {code:"RAL 7023",hex:"#808078",name:"混凝土灰",group:"7000"},
+  {code:"RAL 7024",hex:"#484858",name:"石墨灰",group:"7000"},
+  {code:"RAL 7026",hex:"#384048",name:"花岗岩灰",group:"7000"},
+  {code:"RAL 7030",hex:"#989080",name:"石灰色",group:"7000"},
+  {code:"RAL 7031",hex:"#607080",name:"蓝灰色",group:"7000"},
+  {code:"RAL 7032",hex:"#C8C0A8",name:"鹅卵石灰",group:"7000"},
+  {code:"RAL 7033",hex:"#889880",name:"水泥灰",group:"7000"},
+  {code:"RAL 7034",hex:"#989070",name:"黄灰色",group:"7000"},
+  {code:"RAL 7035",hex:"#D0D0D0",name:"浅灰色",group:"7000"},
+  {code:"RAL 7036",hex:"#988890",name:"铂金灰",group:"7000"},
+  {code:"RAL 7037",hex:"#888880",name:"石板灰",group:"7000"},
+  {code:"RAL 7038",hex:"#C0B8B0",name:"玛瑙灰",group:"7000"},
+  {code:"RAL 7039",hex:"#807870",name:"石英灰",group:"7000"},
+  {code:"RAL 7040",hex:"#9898A8",name:"窗灰色",group:"7000"},
+  {code:"RAL 7042",hex:"#8F9498",name:"交通灰A",group:"7000"},
+  {code:"RAL 7043",hex:"#4E5450",name:"交通灰B",group:"7000"},
+  {code:"RAL 7044",hex:"#C8C0B8",name:"丝绸灰",group:"7000"},
+  {code:"RAL 7045",hex:"#909098",name:"碲灰色",group:"7000"},
+  {code:"RAL 7046",hex:"#7D7F7C",name:"电报灰1",group:"7000"},
+  {code:"RAL 7047",hex:"#D0D0D0",name:"电报灰2",group:"7000"},
+  {code:"RAL 7048",hex:"#8D8880",name:"珍珠鼠灰",group:"7000"},
+  // ── 棕色系 RAL 8xxx ──
+  {code:"RAL 8000",hex:"#886820",name:"绿棕色",group:"8000"},
+  {code:"RAL 8001",hex:"#9A6020",name:"赭棕色",group:"8000"},
+  {code:"RAL 8002",hex:"#784840",name:"信号棕",group:"8000"},
+  {code:"RAL 8003",hex:"#804020",name:"泥土棕",group:"8000"},
+  {code:"RAL 8004",hex:"#903028",name:"铜棕色",group:"8000"},
+  {code:"RAL 8007",hex:"#784030",name:"鹿棕色",group:"8000"},
+  {code:"RAL 8008",hex:"#784820",name:"橄榄棕",group:"8000"},
+  {code:"RAL 8009",hex:"#604038",name:"仿铁棕",group:"8000"},
+  {code:"RAL 8010",hex:"#583828",name:"帐篷棕",group:"8000"},
+  {code:"RAL 8011",hex:"#502820",name:"坚果棕",group:"8000"},
+  {code:"RAL 8012",hex:"#582020",name:"红棕色",group:"8000"},
+  {code:"RAL 8014",hex:"#382018",name:"深棕色",group:"8000"},
+  {code:"RAL 8015",hex:"#582820",name:"栗棕色",group:"8000"},
+  {code:"RAL 8016",hex:"#482018",name:"桃花心木棕",group:"8000"},
+  {code:"RAL 8017",hex:"#401818",name:"巧克力棕",group:"8000"},
+  {code:"RAL 8019",hex:"#402828",name:"灰棕色",group:"8000"},
+  {code:"RAL 8022",hex:"#1E1818",name:"黑棕色",group:"8000"},
+  {code:"RAL 8023",hex:"#A05020",name:"橙棕色",group:"8000"},
+  {code:"RAL 8024",hex:"#885030",name:"米棕色",group:"8000"},
+  {code:"RAL 8025",hex:"#806050",name:"淡棕色",group:"8000"},
+  {code:"RAL 8028",hex:"#482018",name:"大地棕",group:"8000"},
+  {code:"RAL 8029",hex:"#7A3828",name:"珍珠铜棕",group:"8000"},
+  // ── 白/黑系 RAL 9xxx ──
+  {code:"RAL 9001",hex:"#F8F0E0",name:"奶白色",group:"9000"},
+  {code:"RAL 9002",hex:"#E8E4D8",name:"灰白色",group:"9000"},
+  {code:"RAL 9003",hex:"#F8F8F8",name:"信号白",group:"9000"},
+  {code:"RAL 9004",hex:"#2A2A2A",name:"信号黑",group:"9000"},
+  {code:"RAL 9005",hex:"#101010",name:"深黑色",group:"9000"},
+  {code:"RAL 9006",hex:"#A8A8A8",name:"白铝色",group:"9000"},
+  {code:"RAL 9007",hex:"#888880",name:"灰铝色",group:"9000"},
+  {code:"RAL 9010",hex:"#FFFFFF",name:"纯白色",group:"9000"},
+  {code:"RAL 9011",hex:"#101820",name:"石墨黑",group:"9000"},
+  {code:"RAL 9012",hex:"#FFFFF0",name:"清洁白",group:"9000"},
+  {code:"RAL 9016",hex:"#F8F8F0",name:"交通白",group:"9000"},
+  {code:"RAL 9017",hex:"#282828",name:"交通黑",group:"9000"},
+  {code:"RAL 9018",hex:"#D0D8D0",name:"纸白",group:"9000"},
+  {code:"RAL 9022",hex:"#909088",name:"珍珠浅灰",group:"9000"},
+  {code:"RAL 9023",hex:"#808078",name:"珍珠深灰",group:"9000"},
+];
+
+const GROUP_NAMES = {
+  "1000":"黄色系", "2000":"橙色系", "3000":"红色系",
+  "4000":"紫色系", "5000":"蓝色系", "6000":"绿色系",
+  "7000":"灰色系", "8000":"棕色系", "9000":"白/黑系"
+};
+
+// 渲染函数
+function renderColors(filter, search) {
+  const container = document.getElementById("colorContainer");
+  const noResult  = document.getElementById("noResult");
+  const countEl   = document.getElementById("colorCount");
+  container.innerHTML = "";
+
+  const q = (search||"").trim().toLowerCase();
+
+  // 筛选
+  let filtered = RAL_COLORS.filter(c => {
+    if (filter !== "all" && c.group !== filter) return false;
+    if (q) {
+      return c.code.toLowerCase().includes(q) ||
+             c.name.toLowerCase().includes(q) ||
+             c.code.replace(/\s/g,"").toLowerCase().includes(q.replace(/\s/g,""));
+    }
+    return true;
+  });
+
+  countEl.textContent = "共 " + filtered.length + " 色";
+
+  if (filtered.length === 0) {
+    noResult.style.display = "block";
+    return;
+  }
+  noResult.style.display = "none";
+
+  // 按分组输出
+  const groups = filter === "all"
+    ? ["1000","2000","3000","4000","5000","6000","7000","8000","9000"]
+    : [filter];
+
+  groups.forEach(function(g) {
+    const cols = filtered.filter(c => c.group === g);
+    if (!cols.length) return;
+
+    const section = document.createElement("div");
+    section.className = "color-group-section";
+
+    const title = document.createElement("div");
+    title.className = "color-group-title";
+    title.innerHTML = GROUP_NAMES[g] + ' <span class="cg-badge">' + cols.length + '色</span>';
+    section.appendChild(title);
+
+    const grid = document.createElement("div");
+    grid.className = "color-grid";
+
+    cols.forEach(function(c) {
+      const needBorder = ["#FFFFFF","#FFFFF0","#F8F8F0","#F8F8F8","#F8F0E0","#E8E4D8","#FFFF10"].includes(c.hex.toUpperCase());
+      grid.innerHTML += '<div class="color-swatch" title="' + c.code + ' ' + c.name + '">' +
+        '<div class="swatch-block" style="background:' + c.hex + ';' + (needBorder ? 'outline:1px solid #e0e0e0;outline-offset:-1px' : '') + '"></div>' +
+        '<div class="swatch-info">' +
+          '<div class="swatch-code">' + c.code + '</div>' +
+          '<div class="swatch-name">' + c.name + '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    section.appendChild(grid);
+    container.appendChild(section);
+  });
+}
+
+// 初始渲染
+var currentGroup = "all";
+renderColors("all", "");
+
+// 分组标签点击
+document.querySelectorAll(".cg-tab").forEach(function(tab) {
+  tab.addEventListener("click", function() {
+    document.querySelectorAll(".cg-tab").forEach(function(t){ t.classList.remove("active"); });
+    tab.classList.add("active");
+    currentGroup = tab.getAttribute("data-group");
+    renderColors(currentGroup, document.getElementById("colorSearch").value);
+  });
+});
+
+// 搜索输入
+var searchTimer;
+document.getElementById("colorSearch").addEventListener("input", function() {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(function() {
+    renderColors(currentGroup, document.getElementById("colorSearch").value);
+  }, 200);
+});
+</script>
+</body>
+</html>
