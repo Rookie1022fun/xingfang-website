@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>关于我们 - 扬州星方宝乐涂装设备有限公司</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #0d2a52, #1a3a6e);
+      color: #fff; text-align: center;
+      padding: 60px 20px;
+    }
+    .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+    .page-banner p { color: rgba(255,255,255,0.7); font-size: 14px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); }
+    .breadcrumb a:hover { color: #fff; }
+
+    .about-page { padding: 70px 0; }
+    .about-page-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px; align-items: start;
+      margin-bottom: 60px;
+    }
+    .about-page-text h3 { font-size: 24px; color: var(--primary); margin-bottom: 16px; }
+    .about-page-text p { color: var(--text-light); line-height: 1.9; margin-bottom: 14px; }
+
+    .milestone-section { padding: 60px 0; background: var(--light-bg); }
+    .timeline { position: relative; padding: 20px 0; }
+    .timeline::before {
+      content: ""; position: absolute;
+      left: 50%; top: 0; bottom: 0;
+      width: 2px; background: var(--border);
+      transform: translateX(-50%);
+    }
+    .timeline-item {
+      display: flex; justify-content: flex-end;
+      padding-right: calc(50% + 30px);
+      position: relative; margin-bottom: 32px;
+    }
+    .timeline-item:nth-child(even) {
+      justify-content: flex-start;
+      padding-right: 0;
+      padding-left: calc(50% + 30px);
+    }
+    .timeline-dot {
+      position: absolute; left: 50%;
+      transform: translateX(-50%);
+      width: 14px; height: 14px;
+      background: var(--accent); border-radius: 50%;
+      top: 14px;
+    }
+    .timeline-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+      max-width: 380px;
+    }
+    .timeline-card .year { font-size: 13px; color: var(--accent); font-weight: 600; margin-bottom: 4px; }
+    .timeline-card h4 { font-size: 15px; color: var(--primary); margin-bottom: 4px; }
+    .timeline-card p { font-size: 13px; color: var(--text-light); }
+
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px; margin-top: 40px;
+    }
+    .cert-card {
+      background: #fff; border-radius: 8px;
+      padding: 30px 20px; text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .cert-icon { font-size: 42px; margin-bottom: 12px; }
+    .cert-card h4 { font-size: 14px; color: var(--primary); }
+    .cert-card p { font-size: 12px; color: var(--text-light); margin-top: 4px; }
+
+    .team-section { padding: 70px 0; }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+    .team-card {
+      text-align: center;
+      background: #fff; border-radius: 8px;
+      padding: 28px 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    }
+    .team-avatar {
+      width: 80px; height: 80px;
+      background: var(--primary); border-radius: 50%;
+      margin: 0 auto 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px; color: #fff;
+    }
+    .team-card h4 { font-size: 16px; color: var(--primary); }
+    .team-card .role { font-size: 13px; color: var(--accent); margin: 4px 0 8px; }
+    .team-card p { font-size: 12px; color: var(--text-light); }
+
+    @media(max-width:768px) {
+      .about-page-grid { grid-template-columns: 1fr; }
+      .timeline::before { left: 20px; }
+      .timeline-item, .timeline-item:nth-child(even) {
+        justify-content: flex-start;
+        padding: 0 0 0 50px;
+      }
+      .timeline-dot { left: 20px; }
+      .cert-grid { grid-template-columns: repeat(2,1fr); }
+      .team-grid { grid-template-columns: repeat(2,1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <span>📍 江苏省扬州市工业园区星方路88号</span>
+    </div>
+    <div class="top-bar-right">
+      <span>📞 0514-8888-0000</span>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">星方</div>
+      <div class="logo-text">
+        <h1>扬州星方宝乐涂装设备有限公司</h1>
+        <span>YANGZHOU XINGFANG BAOLE COATING EQUIPMENT CO., LTD.</span>
+      </div>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+      <li><a href="about.html" class="active">关于我们</a></li>
+      <li><a href="products.html">产品中心</a></li>
+      <li><a href="news.html">新闻动态</a></li>
+      <li><a href="contact.html">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <h2>关于我们</h2>
+  <div class="breadcrumb"><a href="index.html">首页</a> / 关于我们</div>
+</div>
+
+<!-- 公司简介 -->
+<section class="about-page">
+  <div class="container">
+    <div class="about-page-grid">
+      <div class="about-page-text">
+        <h3>公司简介</h3>
+        <p>扬州星方宝乐涂装设备有限公司成立于2006年，坐落于历史文化名城扬州，毗邻沪宁高速，交通便利。公司专业从事工业涂装设备的研发、设计、制造、安装与售后服务，是集喷漆生产线、前处理设备、固化烘干设备、粉末涂装设备为一体的综合性涂装设备制造企业。</p>
+        <p>公司拥有现代化生产厂房16,000余平方米，年产值逾5000万元，在职员工260余人，其中工程技术人员80余名，包含多名具有深厚理论基础和丰富实践经验的高级工程师。</p>
+        <p>18年来，公司始终坚持"质量为本、诚信经营、技术创新、客户至上"的经营理念，先后为汽车零配件、家用电器、工程机械、轨道交通、新能源等多个行业500余家企业提供优质的涂装整体解决方案，赢得了广大客户的高度信赖与好评。</p>
+      </div>
+      <div style="background:linear-gradient(135deg,#1a3a6e,#2a5a9e);border-radius:12px;height:320px;display:flex;align-items:center;justify-content:center;font-size:80px;color:rgba(255,255,255,0.4)">🏭</div>
+    </div>
+
+    <!-- 核心优势 -->
+    <div class="section-title"><h2>核心优势</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+      <div style="background:var(--light-bg);border-radius:8px;padding:28px;border-left:4px solid var(--accent)">
+        <div style="font-size:36px;margin-bottom:12px">🔬</div>
+        <h4 style="color:var(--primary);margin-bottom:8px">自主研发实力</h4>
+        <p style="font-size:13px;color:var(--text-light)">拥有省级企业技术中心，累计获得国家专利50余项，持续推动产品技术迭代升级。</p>
+      </div>
+      <div style="background:var(--light-bg);border-radius:8px;padding:28px;border-left:4px solid var(--primary)">
+        <div style="font-size:36px;margin-bottom:12px">🌿</div>
+        <h4 style="color:var(--primary);margin-bottom:8px">环保节能领先</h4>
+        <p style="font-size:13px;color:var(--text-light)">产品符合国家最新VOC排放标准，节能设计可降低客户能耗30%以上，助力绿色制造。</p>
+      </div>
+      <div style="background:var(--light-bg);border-radius:8px;padding:28px;border-left:4px solid #27ae60">
+        <div style="font-size:36px;margin-bottom:12px">🛠️</div>
+        <h4 style="color:var(--primary);margin-bottom:8px">全程服务保障</h4>
+        <p style="font-size:13px;color:var(--text-light)">从方案设计到安装调试，从操作培训到定期维保，提供全生命周期一站式服务。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 发展历程 -->
+<section class="milestone-section">
+  <div class="container">
+    <div class="section-title"><h2>发展历程</h2><p>MILESTONES · 18年砥砺前行，见证每一步成长</p></div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2006年</div>
+          <h4>公司成立</h4>
+          <p>在扬州创立星方宝乐涂装设备有限公司，起步于工业涂装行业。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2009年</div>
+          <h4>通过ISO 9001认证</h4>
+          <p>质量管理体系通过国际认证，产品品质迈上新台阶。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2012年</div>
+          <h4>迁入新厂区</h4>
+          <p>建成16000㎡现代化生产基地，产能大幅提升。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2016年</div>
+          <h4>荣获省级高新技术企业</h4>
+          <p>研发实力获得政府认可，累计专利突破30项。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2020年</div>
+          <h4>进军新能源行业</h4>
+          <p>为多家新能源汽车企业提供涂装生产线，打开新市场。</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-card">
+          <div class="year">2024年</div>
+          <h4>服务客户突破500家</h4>
+          <p>业务覆盖全国20余省市，品牌影响力持续提升。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 资质证书 -->
+<section style="padding:70px 0;background:#fff">
+  <div class="container">
+    <div class="section-title"><h2>资质证书</h2><p>QUALIFICATION · 多项权威认证，品质实力见证</p></div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-icon">🏆</div><h4>ISO 9001质量认证</h4><p>国际质量管理体系</p></div>
+      <div class="cert-card"><div class="cert-icon">🔬</div><h4>省级高新技术企业</h4><p>江苏省科技厅认定</p></div>
+      <div class="cert-card"><div class="cert-icon">📋</div><h4>50+项专利证书</h4><p>发明专利&实用新型</p></div>
+      <div class="cert-card"><div class="cert-icon">🌿</div><h4>环保认证</h4><p>VOC排放标准达标</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 核心团队 -->
+<section class="team-section" style="background:var(--light-bg)">
+  <div class="container">
+    <div class="section-title"><h2>核心团队</h2><p>TEAM · 专业团队，为您的项目保驾护航</p></div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">👨‍💼</div>
+        <h4>王建国</h4>
+        <div class="role">总经理</div>
+        <p>从事涂装行业25年，主导公司战略发展方向</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👨‍🔧</div>
+        <h4>李明华</h4>
+        <div class="role">技术总监</div>
+        <p>高级工程师，主持研发多项专利技术</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👨‍💻</div>
+        <h4>张志强</h4>
+        <div class="role">销售总监</div>
+        <p>深耕销售18年，维护全国客户关系网络</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">👩‍🔬</div>
+        <h4>陈美玲</h4>
+        <div class="role">研发工程师</div>
+        <p>专注环保节能技术研究，多项成果转化</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">扬州星方宝乐涂装设备有限公司</div>
+          <p>专注工业涂装设备制造18年，为客户提供高效、环保、可靠的涂装整体解决方案。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>产品系列</h4>
+          <ul>
+            <li><a href="products.html">喷漆生产线</a></li>
+            <li><a href="products.html">前处理设备</a></li>
+            <li><a href="products.html">固化烘干设备</a></li>
+            <li><a href="products.html">粉末涂装设备</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <ul class="footer-contact">
+            <li><span>📞</span><span>0514-8888-0000</span></li>
+            <li><span>✉</span><span>info@xingfangbaole.com</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 扬州星方宝乐涂装设备有限公司 版权所有 | <a href="#">苏ICP备XXXXXXXX号</a></div>
+  </div>
+</footer>
+
+<button class="back-top" title="回到顶部">▲</button>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>新闻动态 - 扬州星方宝乐涂装设备有限公司</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #0d2a52, #1a3a6e);
+      color: #fff; text-align: center; padding: 60px 20px;
+    }
+    .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); }
+
+    .news-page { padding: 60px 0; }
+    .news-page-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+
+    /* 新闻卡片列表 */
+    .news-item {
+      background: #fff; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex; margin-bottom: 24px;
+      transition: box-shadow 0.2s;
+    }
+    .news-item:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+    .news-item-img {
+      width: 200px; min-width: 200px; height: 140px;
+      background: linear-gradient(135deg,#1a3a6e,#2a5a9e);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 48px; color: rgba(255,255,255,0.5);
+    }
+    .news-item:nth-child(2) .news-item-img { background: linear-gradient(135deg,#1a5a1a,#2a8a2a); }
+    .news-item:nth-child(3) .news-item-img { background: linear-gradient(135deg,#5a3a1a,#8a6a2a); }
+    .news-item:nth-child(4) .news-item-img { background: linear-gradient(135deg,#5a1a1a,#8a2a2a); }
+    .news-item-body { padding: 20px 24px; flex: 1; }
+    .news-item-meta { display: flex; gap: 12px; font-size: 12px; color: var(--text-light); margin-bottom: 8px; }
+    .news-item-meta .tag { background: #e8f0fb; color: var(--primary); padding: 2px 8px; border-radius: 12px; }
+    .news-item-body h3 { font-size: 16px; color: var(--primary); margin-bottom: 8px; }
+    .news-item-body p { font-size: 13px; color: var(--text-light); line-height: 1.8; }
+    .news-item-body .more { font-size: 13px; color: var(--accent); margin-top: 10px; display: inline-block; }
+
+    /* 侧边栏 */
+    .sidebar-widget {
+      background: #fff; border-radius: 8px; padding: 22px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      margin-bottom: 24px;
+    }
+    .sidebar-widget h4 {
+      font-size: 16px; color: var(--primary); margin-bottom: 16px;
+      padding-bottom: 10px; border-bottom: 2px solid var(--accent);
+    }
+    .sidebar-list li { padding: 10px 0; border-bottom: 1px dashed var(--border); }
+    .sidebar-list li:last-child { border-bottom: none; }
+    .sidebar-list .s-title { font-size: 13px; color: var(--text); cursor: pointer; transition: color 0.2s; }
+    .sidebar-list .s-title:hover { color: var(--accent); }
+    .sidebar-list .s-date { font-size: 11px; color: var(--text-light); margin-top: 3px; }
+    .cat-list li {
+      padding: 9px 12px; background: var(--light-bg); border-radius: 4px;
+      margin-bottom: 8px; display: flex; justify-content: space-between;
+      font-size: 13px; cursor: pointer; transition: all 0.2s;
+    }
+    .cat-list li:hover { background: var(--primary); color: #fff; }
+    .cat-list li span { background: var(--accent); color: #fff; padding: 1px 8px; border-radius: 10px; font-size: 11px; }
+
+    @media(max-width:768px) {
+      .news-page-grid { grid-template-columns: 1fr; }
+      .news-item { flex-direction: column; }
+      .news-item-img { width: 100%; min-width: unset; height: 160px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left"><span>📍 江苏省扬州市工业园区星方路88号</span></div>
+    <div class="top-bar-right"><span>📞 0514-8888-0000</span></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">星方</div>
+      <div class="logo-text">
+        <h1>扬州星方宝乐涂装设备有限公司</h1>
+        <span>YANGZHOU XINGFANG BAOLE COATING EQUIPMENT CO., LTD.</span>
+      </div>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="products.html">产品中心</a></li>
+      <li><a href="news.html" class="active">新闻动态</a></li>
+      <li><a href="contact.html">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <h2>新闻动态</h2>
+  <div class="breadcrumb"><a href="index.html">首页</a> / 新闻动态</div>
+</div>
+
+<section class="news-page">
+  <div class="container">
+    <div class="news-page-grid">
+
+      <!-- 左侧新闻列表 -->
+      <div class="news-left">
+
+        <div class="news-item">
+          <div class="news-item-img">📰</div>
+          <div class="news-item-body">
+            <div class="news-item-meta">
+              <span class="tag">公司动态</span>
+              <span>📅 2026-03-28</span>
+            </div>
+            <h3>新一代节能型固化烘干炉正式上市，节能率提升35%</h3>
+            <p>经过两年研发攻关，XF-GH2026系列节能固化烘干炉正式推向市场，能耗较上代降低35%……</p>
+            <span class="more">阅读全文 →</span>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-item-img">🏆</div>
+          <div class="news-item-body">
+            <div class="news-item-meta">
+              <span class="tag">荣誉资讯</span>
+              <span>📅 2026-03-20</span>
+            </div>
+            <h3>我公司参加2026年中国国际涂装展览会并斩获多项大奖</h3>
+            <p>在上海举办的2026中国国际涂装展览会上，公司凭借优异的产品实力荣获"最具创新力品牌"等奖项……</p>
+            <span class="more">阅读全文 →</span>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-item-img">🤝</div>
+          <div class="news-item-body">
+            <div class="news-item-meta">
+              <span class="tag">合作动态</span>
+              <span>📅 2026-03-10</span>
+            </div>
+            <h3>与某知名汽车零部件企业签署年度战略合作协议</h3>
+            <p>双方将在产品研发、技术创新、市场拓展等领域展开全面合作，共同推动涂装行业发展……</p>
+            <span class="more">阅读全文 →</span>
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-item-img">📊</div>
+          <div class="news-item-body">
+            <div class="news-item-meta">
+              <span class="tag">行业资讯</span>
+              <span>📅 2026-02-26</span>
+            </div>
+            <h3>2026年工业涂装设备市场趋势分析——绿色化、智能化双驱动</h3>
+            <p>随着双碳政策深入推进和工业自动化浪潮的到来，工业涂装设备市场正迎来新一轮变革……</p>
+            <span class="more">阅读全文 →</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 右侧边栏 -->
+      <div class="news-sidebar">
+        <div class="sidebar-widget">
+          <h4>新闻分类</h4>
+          <ul class="cat-list">
+            <li>公司动态 <span>12</span></li>
+            <li>产品动态 <span>8</span></li>
+            <li>行业资讯 <span>15</span></li>
+            <li>荣誉资讯 <span>6</span></li>
+            <li>合作动态 <span>9</span></li>
+          </ul>
+        </div>
+        <div class="sidebar-widget">
+          <h4>热门文章</h4>
+          <ul class="sidebar-list">
+            <li>
+              <div class="s-title">如何选择适合您工厂的涂装生产线</div>
+              <div class="s-date">2026-02-15</div>
+            </li>
+            <li>
+              <div class="s-title">VOC废气处理设备选型指南</div>
+              <div class="s-date">2026-01-20</div>
+            </li>
+            <li>
+              <div class="s-title">粉末涂装与液态漆涂装对比分析</div>
+              <div class="s-date">2026-01-08</div>
+            </li>
+            <li>
+              <div class="s-title">涂装车间温湿度控制的重要性</div>
+              <div class="s-date">2025-12-18</div>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar-widget" style="background:var(--primary);color:#fff">
+          <h4 style="color:#fff;border-color:var(--accent)">联系我们</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:14px">对我们的产品或服务有疑问？欢迎随时咨询。</p>
+          <a href="contact.html" class="btn-primary" style="display:block;text-align:center">立即咨询</a>
+          <p style="font-size:14px;margin-top:14px;text-align:center">📞 0514-8888-0000</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">扬州星方宝乐涂装设备有限公司</div>
+          <p>专注工业涂装设备制造18年，为客户提供高效、环保、可靠的涂装整体解决方案。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>产品系列</h4>
+          <ul>
+            <li><a href="products.html">喷漆生产线</a></li>
+            <li><a href="products.html">前处理设备</a></li>
+            <li><a href="products.html">固化烘干设备</a></li>
+            <li><a href="products.html">粉末涂装设备</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <ul class="footer-contact">
+            <li><span>📞</span><span>0514-8888-0000</span></li>
+            <li><span>✉</span><span>info@xingfangbaole.com</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 扬州星方宝乐涂装设备有限公司 版权所有 | <a href="#">苏ICP备XXXXXXXX号</a></div>
+  </div>
+</footer>
+<button class="back-top" title="回到顶部">▲</button>
+<script src="main.js"></script>
+</body>
+</html>

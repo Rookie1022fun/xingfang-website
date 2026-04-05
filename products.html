@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>产品中心 - 扬州星方宝乐涂装设备有限公司</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #0d2a52, #1a3a6e);
+      color: #fff; text-align: center; padding: 60px 20px;
+    }
+    .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); }
+
+    .products-page { padding: 60px 0; }
+
+    /* 分类筛选标签 */
+    .filter-tabs {
+      display: flex; flex-wrap: wrap; gap: 10px;
+      margin-bottom: 40px; justify-content: center;
+    }
+    .filter-tab {
+      padding: 8px 22px; border-radius: 24px;
+      border: 1px solid var(--border);
+      background: #fff; color: var(--text);
+      font-size: 14px; cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-tab:hover, .filter-tab.active {
+      background: var(--primary); color: #fff; border-color: var(--primary);
+    }
+
+    /* 产品大图卡片 */
+    .product-detail-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .product-detail-card {
+      background: #fff; border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+      transition: all 0.3s;
+    }
+    .product-detail-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.13);
+    }
+    .product-detail-img {
+      height: 220px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 72px;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-badge {
+      position: absolute; top: 14px; right: 14px;
+      background: var(--accent); color: #fff;
+      font-size: 11px; padding: 3px 10px; border-radius: 12px;
+    }
+    .product-detail-body { padding: 22px; }
+    .product-detail-body h3 { font-size: 17px; color: var(--primary); margin-bottom: 8px; }
+    .product-detail-body p { font-size: 13px; color: var(--text-light); line-height: 1.8; margin-bottom: 14px; }
+    .product-specs {
+      display: flex; flex-wrap: wrap; gap: 8px;
+      margin-bottom: 16px;
+    }
+    .spec-tag {
+      background: var(--light-bg); border-radius: 4px;
+      padding: 3px 10px; font-size: 12px; color: var(--primary);
+    }
+    .product-detail-body .btn-primary {
+      display: inline-block; padding: 9px 24px; font-size: 13px;
+    }
+
+    @media(max-width:768px) {
+      .product-detail-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(max-width:480px) {
+      .product-detail-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left"><span>📍 江苏省扬州市工业园区星方路88号</span></div>
+    <div class="top-bar-right"><span>📞 0514-8888-0000</span></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">星方</div>
+      <div class="logo-text">
+        <h1>扬州星方宝乐涂装设备有限公司</h1>
+        <span>YANGZHOU XINGFANG BAOLE COATING EQUIPMENT CO., LTD.</span>
+      </div>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="products.html" class="active">产品中心</a></li>
+      <li><a href="news.html">新闻动态</a></li>
+      <li><a href="contact.html">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <h2>产品中心</h2>
+  <div class="breadcrumb"><a href="index.html">首页</a> / 产品中心</div>
+</div>
+
+<section class="products-page">
+  <div class="container">
+
+    <!-- 筛选标签 -->
+    <div class="filter-tabs">
+      <div class="filter-tab active">全部产品</div>
+      <div class="filter-tab">喷漆生产线</div>
+      <div class="filter-tab">前处理设备</div>
+      <div class="filter-tab">固化烘干设备</div>
+      <div class="filter-tab">环保处理</div>
+      <div class="filter-tab">粉末涂装</div>
+      <div class="filter-tab">输送系统</div>
+    </div>
+
+    <div class="product-detail-grid">
+
+      <!-- 产品1 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f0fb,#d0e0f5)">
+          🏭<span class="product-badge">热销</span>
+        </div>
+        <div class="product-detail-body">
+          <h3>XF-PL系列全自动喷漆生产线</h3>
+          <p>采用全自动控制系统，适用于汽车零配件、家电、五金等行业。喷涂均匀、效率高、废料少。</p>
+          <div class="product-specs">
+            <span class="spec-tag">全自动</span>
+            <span class="spec-tag">节能30%</span>
+            <span class="spec-tag">可定制</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品2 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#fef3e8,#fde0c0)">⚙️</div>
+        <div class="product-detail-body">
+          <h3>QC系列前处理磷化线</h3>
+          <p>脱脂→清洗→表调→磷化→清洗→钝化一体化流水线，为涂装提供最佳底材，显著提升附着力。</p>
+          <div class="product-specs">
+            <span class="spec-tag">多道工序</span>
+            <span class="spec-tag">自动控温</span>
+            <span class="spec-tag">耐腐蚀</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品3 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">
+          🌡️<span class="product-badge">新品</span>
+        </div>
+        <div class="product-detail-body">
+          <h3>XF-GH2026节能固化烘干炉</h3>
+          <p>热风循环均温技术，±2℃精准控温。较上代节能35%，适用于液态漆、粉末漆固化。</p>
+          <div class="product-specs">
+            <span class="spec-tag">节能35%</span>
+            <span class="spec-tag">精准控温</span>
+            <span class="spec-tag">智能报警</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品4 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd9)">💨</div>
+        <div class="product-detail-body">
+          <h3>UV光解+活性炭废气处理设备</h3>
+          <p>针对喷漆废气中的苯系物、酯类等有机物进行高效处理，VOC去除率≥95%，稳定达标排放。</p>
+          <div class="product-specs">
+            <span class="spec-tag">去除率≥95%</span>
+            <span class="spec-tag">低能耗</span>
+            <span class="spec-tag">免维护</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品5 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2)">🚗</div>
+        <div class="product-detail-body">
+          <h3>积放式悬挂输送链系统</h3>
+          <p>工件平稳输送，支持自动积放、分道、合流，适配多种工件形状，节省空间，维护简便。</p>
+          <div class="product-specs">
+            <span class="spec-tag">自动积放</span>
+            <span class="spec-tag">低噪音</span>
+            <span class="spec-tag">长寿命</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品6 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">🔧</div>
+        <div class="product-detail-body">
+          <h3>全套粉末涂装流水线</h3>
+          <p>集喷粉房、静电喷枪、流化桶、粉末回收系统于一体，换色方便，上粉率高，成本低。</p>
+          <div class="product-specs">
+            <span class="spec-tag">换色快捷</span>
+            <span class="spec-tag">回收率高</span>
+            <span class="spec-tag">环保</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品7 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f0fb,#cce0ff)">🤖</div>
+        <div class="product-detail-body">
+          <h3>喷涂机器人系统</h3>
+          <p>六轴工业机器人+自动喷枪，轨迹编程精准，适用于复杂工件自动喷涂，提升一致性和效率。</p>
+          <div class="product-specs">
+            <span class="spec-tag">六轴机器人</span>
+            <span class="spec-tag">重复精度高</span>
+            <span class="spec-tag">防爆设计</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品8 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#fff9e6,#ffedb0)">💧</div>
+        <div class="product-detail-body">
+          <h3>水性漆喷涂系统</h3>
+          <p>专为水性漆设计，配备专用泵送、雾化、控温系统，有效避免干枪、流挂等问题，环保效果佳。</p>
+          <div class="product-specs">
+            <span class="spec-tag">水性漆专用</span>
+            <span class="spec-tag">超低VOC</span>
+            <span class="spec-tag">防腐材质</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+      <!-- 产品9 -->
+      <div class="product-detail-card">
+        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8faf0,#b2dfce)">📊</div>
+        <div class="product-detail-body">
+          <h3>涂装车间智能控制系统</h3>
+          <p>MES系统对接，实时监控温度、湿度、膜厚、废气浓度等参数，数据可追溯，异常自动报警。</p>
+          <div class="product-specs">
+            <span class="spec-tag">实时监控</span>
+            <span class="spec-tag">数据追溯</span>
+            <span class="spec-tag">远程运维</span>
+          </div>
+          <a href="contact.html" class="btn-primary">获取报价</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 服务说明 -->
+<section style="padding:60px 0;background:var(--primary)">
+  <div class="container" style="text-align:center;color:#fff">
+    <h2 style="font-size:26px;margin-bottom:12px">需要定制化解决方案？</h2>
+    <p style="color:rgba(255,255,255,0.75);margin-bottom:28px">我们根据您的行业、工件特性、产能需求，提供一对一专属方案设计</p>
+    <a href="contact.html" class="btn-primary" style="display:inline-block">立即咨询专家</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">扬州星方宝乐涂装设备有限公司</div>
+          <p>专注工业涂装设备制造18年，为客户提供高效、环保、可靠的涂装整体解决方案。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>产品系列</h4>
+          <ul>
+            <li><a href="products.html">喷漆生产线</a></li>
+            <li><a href="products.html">前处理设备</a></li>
+            <li><a href="products.html">固化烘干设备</a></li>
+            <li><a href="products.html">粉末涂装设备</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <ul class="footer-contact">
+            <li><span>📞</span><span>0514-8888-0000</span></li>
+            <li><span>✉</span><span>info@xingfangbaole.com</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 扬州星方宝乐涂装设备有限公司 版权所有 | <a href="#">苏ICP备XXXXXXXX号</a></div>
+  </div>
+</footer>
+<button class="back-top" title="回到顶部">▲</button>
+<script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>联系我们 - 扬州星方宝乐涂装设备有限公司</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-banner {
+      background: linear-gradient(135deg, #0d2a52, #1a3a6e);
+      color: #fff; text-align: center; padding: 60px 20px;
+    }
+    .page-banner h2 { font-size: 32px; margin-bottom: 10px; }
+    .breadcrumb { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 10px; }
+    .breadcrumb a { color: rgba(255,255,255,0.6); }
+
+    .contact-page { padding: 70px 0; }
+
+    /* 联系卡片 */
+    .contact-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px; margin-bottom: 60px;
+    }
+    .contact-card {
+      background: #fff; border-radius: 10px;
+      padding: 30px 20px; text-align: center;
+      box-shadow: 0 2px 14px rgba(0,0,0,0.07);
+      transition: all 0.3s;
+    }
+    .contact-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.12); }
+    .contact-card .cc-icon {
+      width: 60px; height: 60px;
+      background: var(--primary); border-radius: 50%;
+      margin: 0 auto 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 26px; color: #fff;
+    }
+    .contact-card h4 { font-size: 15px; color: var(--primary); margin-bottom: 8px; }
+    .contact-card p { font-size: 14px; color: var(--text-light); line-height: 1.7; }
+    .contact-card strong { color: var(--text); }
+
+    /* 大表单区 */
+    .contact-big-grid {
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 50px;
+    }
+    .contact-big-info h3 { font-size: 22px; color: var(--primary); margin-bottom: 20px; }
+    .contact-big-info p { font-size: 14px; color: var(--text-light); line-height: 1.9; margin-bottom: 20px; }
+    .info-table { width: 100%; border-collapse: collapse; }
+    .info-table tr td {
+      padding: 10px 12px; font-size: 14px; border-bottom: 1px solid var(--border);
+    }
+    .info-table tr td:first-child { color: var(--primary); font-weight: 600; white-space: nowrap; width: 100px; }
+    .info-table tr td:last-child { color: var(--text-light); }
+
+    .contact-big-form h3 { font-size: 22px; color: var(--primary); margin-bottom: 20px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 13px; color: var(--text-light); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 11px 14px; border: 1px solid var(--border);
+      border-radius: 4px; font-size: 14px; font-family: inherit;
+      outline: none; transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: var(--primary);
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* 地图 */
+    .map-section { padding: 0 0 70px; }
+    .map-placeholder {
+      height: 300px; background: linear-gradient(135deg,#e8f0fb,#d0e0f5);
+      border-radius: 10px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      border: 2px dashed #b0c8e8;
+    }
+
+    @media(max-width:1024px) { .contact-cards { grid-template-columns: repeat(2,1fr); } }
+    @media(max-width:768px) {
+      .contact-cards { grid-template-columns: repeat(2,1fr); }
+      .contact-big-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media(max-width:480px) { .contact-cards { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left"><span>📍 江苏省扬州市工业园区星方路88号</span></div>
+    <div class="top-bar-right"><span>📞 0514-8888-0000</span></div>
+  </div>
+</div>
+
+<nav class="navbar">
+  <div class="container">
+    <div class="logo">
+      <div class="logo-icon">星方</div>
+      <div class="logo-text">
+        <h1>扬州星方宝乐涂装设备有限公司</h1>
+        <span>YANGZHOU XINGFANG BAOLE COATING EQUIPMENT CO., LTD.</span>
+      </div>
+    </div>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+    <ul class="nav-menu">
+      <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+      <li><a href="about.html">关于我们</a></li>
+      <li><a href="products.html">产品中心</a></li>
+      <li><a href="news.html">新闻动态</a></li>
+      <li><a href="contact.html" class="active">联系我们</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-banner">
+  <h2>联系我们</h2>
+  <div class="breadcrumb"><a href="index.html">首页</a> / 联系我们</div>
+</div>
+
+<section class="contact-page">
+  <div class="container">
+
+    <!-- 联系卡片 -->
+    <div class="contact-cards">
+      <div class="contact-card">
+        <div class="cc-icon">📍</div>
+        <h4>公司地址</h4>
+        <p><strong>江苏省扬州市工业园区星方路88号</strong></p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">📞</div>
+        <h4>销售热线</h4>
+        <p><strong>0514-8888-0000</strong><br>0514-8888-0001</p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">📱</div>
+        <h4>手机 / 微信</h4>
+        <p><strong>138-0000-8888</strong><br>王经理（微信同号）</p>
+      </div>
+      <div class="contact-card">
+        <div class="cc-icon">✉</div>
+        <h4>电子邮箱</h4>
+        <p><strong>info@xingfangbaole.com</strong><br>sales@xingfangbaole.com</p>
+      </div>
+    </div>
+
+    <!-- 详情 + 表单 -->
+    <div class="contact-big-grid">
+      <div class="contact-big-info">
+        <h3>联系方式详情</h3>
+        <p>欢迎您通过以下任意方式联系我们，我们将在24小时内给予回复。对于紧急技术支持需求，请直接拨打售后服务热线。</p>
+        <table class="info-table">
+          <tr><td>公司全称</td><td>扬州星方宝乐涂装设备有限公司</td></tr>
+          <tr><td>销售热线</td><td>0514-8888-0000 / 0514-8888-0001</td></tr>
+          <tr><td>售后服务</td><td>0514-8888-0002（24小时）</td></tr>
+          <tr><td>传真号码</td><td>0514-8888-0003</td></tr>
+          <tr><td>联系邮箱</td><td>info@xingfangbaole.com</td></tr>
+          <tr><td>工作时间</td><td>周一至周六 08:30 – 17:30</td></tr>
+          <tr><td>公司地址</td><td>江苏省扬州市工业园区星方路88号</td></tr>
+          <tr><td>邮政编码</td><td>225000</td></tr>
+        </table>
+      </div>
+
+      <div class="contact-big-form">
+        <h3>在线咨询 / 获取报价</h3>
+        <form id="contactForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label>您的姓名 *</label>
+              <input type="text" name="name" placeholder="请输入姓名" />
+            </div>
+            <div class="form-group">
+              <label>联系电话 *</label>
+              <input type="tel" name="phone" placeholder="请输入手机/电话" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>公司名称</label>
+              <input type="text" name="company" placeholder="请输入公司名称" />
+            </div>
+            <div class="form-group">
+              <label>您的职务</label>
+              <input type="text" name="title" placeholder="例如：采购经理" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label>电子邮箱</label>
+            <input type="email" name="email" placeholder="请输入邮箱地址" />
+          </div>
+          <div class="form-group">
+            <label>咨询产品类型</label>
+            <select name="product">
+              <option value="">请选择感兴趣的产品</option>
+              <option>喷漆生产线</option>
+              <option>前处理设备</option>
+              <option>固化烘干设备</option>
+              <option>环保废气处理设备</option>
+              <option>输送悬挂系统</option>
+              <option>粉末涂装设备</option>
+              <option>喷涂机器人系统</option>
+              <option>整体涂装解决方案</option>
+              <option>其他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>留言内容</label>
+            <textarea name="message" placeholder="请详细描述您的需求，如：行业类型、工件尺寸、产能要求、预算范围等，以便我们为您提供更精准的方案……"></textarea>
+          </div>
+          <button type="submit" class="btn-submit" style="width:100%;padding:14px">提交咨询</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 地图 -->
+<section class="map-section">
+  <div class="container">
+    <div class="section-title"><h2>公司位置</h2></div>
+    <div class="map-placeholder">
+      <div style="font-size:48px;margin-bottom:12px">🗺️</div>
+      <p style="font-size:16px;color:var(--primary);font-weight:600">江苏省扬州市工业园区星方路88号</p>
+      <p style="font-size:13px;color:#aaa;margin-top:8px">
+        【嵌入地图教程】在百度地图搜索公司地址 → 点击"分享" → 复制嵌入代码 → 粘贴到此处替换本块内容
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">扬州星方宝乐涂装设备有限公司</div>
+          <p>专注工业涂装设备制造18年，为客户提供高效、环保、可靠的涂装整体解决方案。</p>
+        </div>
+        <div class="footer-col">
+          <h4>快速导航</h4>
+          <ul>
+            <li><a href="index.html">首&nbsp;&nbsp;页</a></li>
+            <li><a href="about.html">关于我们</a></li>
+            <li><a href="products.html">产品中心</a></li>
+            <li><a href="news.html">新闻动态</a></li>
+            <li><a href="contact.html">联系我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>产品系列</h4>
+          <ul>
+            <li><a href="products.html">喷漆生产线</a></li>
+            <li><a href="products.html">前处理设备</a></li>
+            <li><a href="products.html">固化烘干设备</a></li>
+            <li><a href="products.html">粉末涂装设备</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>联系我们</h4>
+          <ul class="footer-contact">
+            <li><span>📞</span><span>0514-8888-0000</span></li>
+            <li><span>✉</span><span>info@xingfangbaole.com</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container">© 2026 扬州星方宝乐涂装设备有限公司 版权所有 | <a href="#">苏ICP备XXXXXXXX号</a></div>
+  </div>
+</footer>
+<button class="back-top" title="回到顶部">▲</button>
+<script src="main.js"></script>
+</body>
+</html>
