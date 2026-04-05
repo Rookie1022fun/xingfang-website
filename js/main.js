@@ -116,6 +116,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // ---- 导航栏滚动阴影 ----
+  var navbar = document.querySelector(".navbar");
+  if (navbar) {
+    window.addEventListener("scroll", function () {
+      navbar.classList.toggle("scrolled", window.scrollY > 10);
+    });
+  }
+
+  // ---- 产品筛选 ----
+  var filterTabs = document.querySelectorAll(".filter-tab");
+  var productCards = document.querySelectorAll(".product-detail-card");
+  if (filterTabs.length > 0) {
+    filterTabs.forEach(function (tab) {
+      tab.addEventListener("click", function () {
+        filterTabs.forEach(function (t) { t.classList.remove("active"); });
+        tab.classList.add("active");
+        var filter = tab.getAttribute("data-filter");
+        productCards.forEach(function (card) {
+          if (filter === "all" || card.getAttribute("data-category") === filter) {
+            card.classList.remove("hidden");
+          } else {
+            card.classList.add("hidden");
+          }
+        });
+      });
+    });
+  }
+
   // ---- 滚动入场动画 ----
   var revealEls = document.querySelectorAll(".reveal");
   if (revealEls.length > 0) {

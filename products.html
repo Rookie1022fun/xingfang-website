@@ -44,21 +44,55 @@
       box-shadow: 0 2px 16px rgba(0,0,0,0.07);
       transition: all 0.3s;
     }
+    .product-detail-card.hidden { display: none; }
     .product-detail-card:hover {
       transform: translateY(-6px);
       box-shadow: 0 10px 28px rgba(0,0,0,0.13);
     }
     .product-detail-img {
-      height: 220px;
+      height: 200px;
       display: flex; align-items: center; justify-content: center;
-      font-size: 72px;
       position: relative;
       overflow: hidden;
+    }
+    .product-detail-img::before, .product-detail-img::after {
+      content: ''; position: absolute; border-radius: 50%;
+      transition: transform 0.4s;
+    }
+    .product-detail-card:hover .product-detail-img::before { transform: scale(1.15); }
+    .product-detail-card:hover .product-detail-img::after  { transform: scale(1.1) rotate(15deg); }
+
+    .pdi-polyester   { background: linear-gradient(145deg,#0f2d6e,#1e4fa0,#2d6bc4); }
+    .pdi-antistatic  { background: linear-gradient(145deg,#7c2000,#b83700,#e8520a); }
+    .pdi-artistic    { background: linear-gradient(145deg,#0a3322,#0f5035,#18754e); }
+    .pdi-hightemp    { background: linear-gradient(145deg,#5c0a0a,#8f1a1a,#c02525); }
+    .pdi-transfer    { background: linear-gradient(145deg,#2a0a5c,#3d1282,#5a24ad); }
+    .pdi-flameretard { background: linear-gradient(145deg,#3d2200,#6b3a00,#9e5800); }
+    .pdi-epoxy       { background: linear-gradient(145deg,#0a2e2e,#0f4a4a,#186a6a); }
+    .pdi-epoxypoly   { background: linear-gradient(145deg,#0d1f3c,#1a3a6e,#2a5a9e); }
+
+    .pdi-polyester::before   { width:140px;height:140px;background:rgba(255,255,255,0.06);right:-30px;top:-30px; }
+    .pdi-antistatic::before  { width:120px;height:120px;background:rgba(255,255,255,0.07);left:-20px;top:-20px; }
+    .pdi-antistatic::after   { width:60px;height:60px;background:rgba(255,255,255,0.08);right:30px;bottom:10px;border-radius:6px;transform:rotate(45deg); }
+    .pdi-artistic::before    { width:100px;height:100px;background:rgba(255,255,255,0.06);right:20px;top:-10px;border-radius:8px;transform:rotate(20deg); }
+    .pdi-hightemp::before    { width:160px;height:160px;background:rgba(255,255,255,0.04);left:50%;top:50%;transform:translate(-50%,-50%); }
+    .pdi-transfer::before    { width:130px;height:130px;background:rgba(255,255,255,0.06);right:-10px;bottom:-10px; }
+    .pdi-flameretard::before { width:100px;height:100px;background:rgba(255,255,255,0.06);right:30px;top:20px;border-radius:0;transform:rotate(45deg); }
+    .pdi-epoxy::before       { width:120px;height:120px;background:rgba(255,255,255,0.05);left:50%;top:50%;transform:translate(-50%,-50%); }
+    .pdi-epoxypoly::before   { width:150px;height:150px;background:rgba(255,255,255,0.05);right:-20px;top:-20px; }
+
+    .pdi-label {
+      position: relative; z-index: 2;
+      color: rgba(255,255,255,0.5); font-size: 11px;
+      font-weight: 600; letter-spacing: 2px;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 4px 10px; border-radius: 2px;
     }
     .product-badge {
       position: absolute; top: 14px; right: 14px;
       background: var(--accent); color: #fff;
       font-size: 11px; padding: 3px 10px; border-radius: 12px;
+      z-index: 3;
     }
     .product-detail-body { padding: 22px; }
     .product-detail-body h3 { font-size: 17px; color: var(--primary); margin-bottom: 8px; }
@@ -146,19 +180,19 @@
 
     <!-- 筛选标签 -->
     <div class="filter-tabs">
-      <div class="filter-tab active">全部产品</div>
-      <div class="filter-tab">聚酯系列</div>
-      <div class="filter-tab">功能性系列</div>
-      <div class="filter-tab">环氧系列</div>
-      <div class="filter-tab">特种系列</div>
-      <div class="filter-tab">涂装流水线</div>
+      <div class="filter-tab active" data-filter="all">全部产品</div>
+      <div class="filter-tab" data-filter="polyester">聚酯系列</div>
+      <div class="filter-tab" data-filter="functional">功能性系列</div>
+      <div class="filter-tab" data-filter="epoxy">环氧系列</div>
+      <div class="filter-tab" data-filter="special">特种系列</div>
     </div>
 
     <div class="product-detail-grid">
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f0fb,#d0e0f5)">
-          🎨<span class="product-badge">热销</span>
+      <div class="product-detail-card" data-category="polyester">
+        <div class="product-detail-img pdi-polyester">
+          <span class="pdi-label">POLYESTER</span>
+          <span class="product-badge">热销</span>
         </div>
         <div class="product-detail-body">
           <h3>纯聚酯型粉末涂料</h3>
@@ -188,8 +222,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#fff3e0,#ffe0b2)">⚡</div>
+      <div class="product-detail-card" data-category="functional">
+        <div class="product-detail-img pdi-antistatic">
+          <span class="pdi-label">ANTISTATIC</span>
+        </div>
         <div class="product-detail-body">
           <h3>抗静电型粉末涂料</h3>
           <p>由环氧聚酯树脂及导电性填料和金属粉组成，专门设计用于需要消除静电的场合。可提供室内和户外的导电型粉末涂料，满足不同环境下的抗静电需求。固化条件：200℃，10分钟。</p>
@@ -214,8 +250,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#fce4ec,#f8bbd0)">🖼️</div>
+      <div class="product-detail-card" data-category="polyester">
+        <div class="product-detail-img pdi-artistic">
+          <span class="pdi-label">ARTISTIC</span>
+        </div>
         <div class="product-detail-body">
           <h3>美术型粉末涂料</h3>
           <p>提供混合型、纯聚酯型等多种树脂类型的美术花纹效果粉末涂料，分户外/户内使用。效果：砂纹、锤纹、丝绸纹、大理石纹、金属外观等多种效果，外观豪华，能有效掩盖基材缺陷。固化：180-200℃，10-15分钟。</p>
@@ -242,8 +280,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f5e9,#c8e6c9)">🌡️</div>
+      <div class="product-detail-card" data-category="special">
+        <div class="product-detail-img pdi-hightemp">
+          <span class="pdi-label">HIGH TEMP</span>
+        </div>
         <div class="product-detail-body">
           <h3>耐高温型粉末涂料</h3>
           <p>由特殊树脂和耐高温颜填料组成，具有良好的耐高温性、抗腐蚀性和颜色稳定性。可提供耐热230℃/6小时、250℃/3小时、300℃/2小时等型号，客户可根据不同要求选择。固化条件：230℃，15分钟。</p>
@@ -268,8 +308,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#e0f7fa,#b2ebf2)">🖨️</div>
+      <div class="product-detail-card" data-category="special">
+        <div class="product-detail-img pdi-transfer">
+          <span class="pdi-label">TRANSFER</span>
+        </div>
         <div class="product-detail-body">
           <h3>热转印型粉末涂料</h3>
           <p>专用于热转印技术底膜喷涂，主要原料为改性聚酯树脂，适合户内及户外。可将任何照片纹路转印到涂膜表面，纹路清晰、渗透性好、扩散性小。提供静电枪和摩擦枪喷涂产品。固化条件：200℃，10-20分钟。</p>
@@ -296,8 +338,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#f3e5f5,#e1bee7)">🔥</div>
+      <div class="product-detail-card" data-category="functional">
+        <div class="product-detail-img pdi-flameretard">
+          <span class="pdi-label">FLAME RET.</span>
+        </div>
         <div class="product-detail-body">
           <h3>阻燃型粉末涂料</h3>
           <p>含卤素的复配有机物涂料，燃烧时分解大量不燃气体冲淡可燃气体浓度，延缓燃烧。复配成份协同作用，大大提高了阻燃性。熔点：304-309℃，热失重温度（5%）≥320℃。</p>
@@ -323,8 +367,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#e8f0fb,#cce0ff)">🧪</div>
+      <div class="product-detail-card" data-category="epoxy">
+        <div class="product-detail-img pdi-epoxy">
+          <span class="pdi-label">EPOXY</span>
+        </div>
         <div class="product-detail-body">
           <h3>纯环氧型粉末涂料</h3>
           <p>具有优良的物理性能和化学性能，并具有良好的电绝缘性能。唯一不足是耐候性能差，不适合作为室外装饰用涂装。提供标准型和低温固化型，高光至无光多种光泽。固化：A型200℃ / B型180℃ / C型140℃，各15分钟。</p>
@@ -352,9 +398,10 @@
         </div>
       </div>
 
-      <div class="product-detail-card">
-        <div class="product-detail-img" style="background:linear-gradient(135deg,#fff9e6,#ffedb0)">
-          🏭<span class="product-badge">推荐</span>
+      <div class="product-detail-card" data-category="epoxy">
+        <div class="product-detail-img pdi-epoxypoly">
+          <span class="pdi-label">EPOXY-POLY</span>
+          <span class="product-badge">推荐</span>
         </div>
         <div class="product-detail-body">
           <h3>环氧聚酯型粉末涂料</h3>
