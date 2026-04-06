@@ -141,7 +141,7 @@
       <li><a href="about.html" class="active">关于我们</a></li>
       <li><a href="products.html">产品中心</a></li>
       <li><a href="news.html">新闻动态</a></li>
-      <li><a href="colors.html">RAL色卡</a></li>
+      <li><a href="colors.html">色卡中心</a></li>
       <li><a href="contact.html">联系我们</a></li>
     </ul>
   </div>
@@ -162,8 +162,21 @@
         <p>星方专注于粉末涂料的研发、生产与销售，拥有聚酯、环氧、功能性、特种、金属粉末五大核心系列，覆盖纯聚酯、抗静电、美术型、耐高温、热转印、阻燃型等全品类定制化涂料。宝乐专注于工业涂装设备的研发、设计、制造、安装与售后服务，打造前处理、固化、输送、环保处理四大产品线，为客户提供定制化涂装生产线解决方案。</p>
         <p>两家企业资源共享、技术互补，形成"涂料 + 设备"的全产业链服务体系，拥有12000㎡标准厂房、2500㎡办公区，始终秉承"质量第一，服务第一"的宗旨，累计为汽车零配件、家用电器、工程机械、轨道交通、新能源等多个行业500余家企业提供一站式涂装整体解决方案。</p>
       </div>
-      <div style="border-radius:12px;overflow:hidden;height:360px">
-        <img src="images/company-front.jpg" alt="星方·宝乐厂房外观" style="width:100%;height:100%;object-fit:cover">
+      <!-- 厂房照片轮播 -->
+      <div class="factory-slider" style="border-radius:12px;overflow:hidden;height:360px;position:relative">
+        <div class="factory-slides" style="display:flex;height:100%;transition:transform 0.6s cubic-bezier(.4,0,.2,1)">
+          <div class="factory-slide" style="min-width:100%;height:100%"><img src="images/factory-slide-1.jpg" alt="厂房外观" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="factory-slide" style="min-width:100%;height:100%"><img src="images/factory-slide-2.jpg" alt="公司招牌" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="factory-slide" style="min-width:100%;height:100%"><img src="images/factory-slide-3.jpg" alt="厂区全景" style="width:100%;height:100%;object-fit:cover"></div>
+          <div class="factory-slide" style="min-width:100%;height:100%"><img src="images/company-sign2.jpg" alt="企业铭牌" style="width:100%;height:100%;object-fit:cover"></div>
+        </div>
+        <!-- 指示点 -->
+        <div class="factory-dots" style="position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px">
+          <span class="fdot active" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:1;cursor:pointer;transition:opacity .3s"></span>
+          <span class="fdot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:0.45;cursor:pointer;transition:opacity .3s"></span>
+          <span class="fdot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:0.45;cursor:pointer;transition:opacity .3s"></span>
+          <span class="fdot" style="width:8px;height:8px;border-radius:50%;background:#fff;opacity:0.45;cursor:pointer;transition:opacity .3s"></span>
+        </div>
       </div>
     </div>
 
@@ -277,7 +290,7 @@
             <li><a href="about.html">关于我们</a></li>
             <li><a href="products.html">产品中心</a></li>
             <li><a href="news.html">新闻动态</a></li>
-            <li><a href="colors.html">RAL色卡</a></li>
+            <li><a href="colors.html">色卡中心</a></li>
       <li><a href="contact.html">联系我们</a></li>
           </ul>
         </div>
@@ -307,5 +320,29 @@
 
 <button class="back-top" title="回到顶部">▲</button>
 <script src="js/main.js"></script>
+<script>
+// 厂房照片轮播
+(function() {
+  var slides = document.querySelector('.factory-slides');
+  var dots   = document.querySelectorAll('.fdot');
+  if (!slides || !dots.length) return;
+  var total = dots.length;
+  var cur = 0;
+
+  function goTo(idx) {
+    cur = (idx + total) % total;
+    slides.style.transform = 'translateX(-' + cur * 100 + '%)';
+    dots.forEach(function(d, i) {
+      d.style.opacity = i === cur ? '1' : '0.45';
+    });
+  }
+
+  dots.forEach(function(d, i) {
+    d.addEventListener('click', function() { goTo(i); });
+  });
+
+  setInterval(function() { goTo(cur + 1); }, 4000);
+})();
+</script>
 </body>
 </html>
